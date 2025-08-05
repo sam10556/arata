@@ -57,9 +57,6 @@ const Header = () => {
                 {label}
               </button>
             ))}
-            <button className="text-lg bg-[#6C8A57] text-white px-6 py-2 rounded-full hover:bg-[#5A7D49] transition-colors font-medium shadow-md">
-              Shop Now
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}

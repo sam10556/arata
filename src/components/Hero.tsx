@@ -13,7 +13,9 @@ const Hero = () => {
             <div className="space-y-5">
               <h1 className="text-5xl sm:text-6xl garamond font-serif font-light text-white leading-tight">
                 Elevate Your Skincare.
-                <span className="block text-[#F6F1EA] garamond italic">Naturally.</span>
+                <span className="block text-[#F6F1EA] garamond italic">
+                  Naturally.
+                </span>
               </h1>
               <p className="text-lg sm:text-xl text-white max-w-xl leading-relaxed mx-auto lg:mx-0">
                 Discover the perfect fusion of form and function. Our
@@ -25,12 +27,12 @@ const Hero = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button className="group bg-[#FAF8F5] text-[#4A5A38] px-8 py-4 rounded-full hover:bg-[#4A5A38] hover:text-white transition duration-300 font-medium text-lg flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
-                <span>Shop Now</span>
+                <a href="#feature">Get Started</a>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border-2 border-[#FAF8F5] text-[#FAF8F5] px-8 py-4 rounded-full hover:bg-white hover:text-[#4A5A38] transition duration-300 font-medium text-lg">
-                Learn More
-              </button>
+              {/* <button className="border-2 border-[#FAF8F5] text-[#FAF8F5] px-8 py-4 rounded-full hover:bg-white hover:text-[#4A5A38] transition duration-300 font-medium text-lg">
+                Natural Care
+              </button> */}
             </div>
 
             {/* Trust icons */}
