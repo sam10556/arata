@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Eczar:wght@400..800&family=Oi&display=swap');
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/parallax";
+
+
+.garamond{
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+.garamond1{
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.oi{
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.eczar{
+  font-family: "Eczar", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+html{
+  font-size: 110%;
+}
+
+.face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-button-prev,
+.swiper-button-next {
+  color: #FFF6ED; /* Soft cream arrow */
+  padding: 1rem;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #FFE3D2; /* Light peach on hover */
+}
+
+.swiper-pagination-progressbar {
+  background: rgba(255, 255, 255, 0.2); /* Progressbar track */
+  height: 4px;
+  border-radius: 4px;
+}
+
+.swiper-pagination-progressbar-fill {
+  background: #FFF6ED; /* Progressbar fill */
+  height: 100%;
+}
+
+
+.box {
+  --mask: radial-gradient(
+        49.48px at 50% calc(100% + 23.4px),
+        #0000 calc(99% - 8px),
+        #000 calc(101% - 8px) 99%,
+        #0000 101%
+      )
+      calc(50% - 78px) calc(50% - 23.5px + 0.5px) / 156px 47px,
+    radial-gradient(
+        49.48px at 50% -23.4px,
+        #0000 calc(99% - 8px),
+        #000 calc(101% - 8px) 99%,
+        #0000 101%
+      )
+      50% calc(50% + 23.5px) / 156px 47px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.flower {
+  width: 600px; /* adjust to control the size */
+  aspect-ratio: 1;
+  --g: /37.02% 37.02% radial-gradient(#000 calc(71% - 1px), #0000 71%) no-repeat;
+  mask: 100% 50% var(--g), 65.451% 97.553% var(--g), 9.549% 79.389% var(--g),
+    9.549% 20.611% var(--g), 65.451% 2.447% var(--g),
+    radial-gradient(100% 100%, #000 25.476%, #0000 calc(25.476% + 1px));
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.wavy-circle {
+  --s: 640px; /* Adjust size */
+  width: var(--s);
+  aspect-ratio: 1;
+  background-color: #963a2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  --g: /calc(var(--s) * 0.181) calc(var(--s) * 0.181) radial-gradient(
+      50% 50%,
+      #000 99%,
+      #0000 101%
+    ) no-repeat;
+  mask: calc(50% + var(--s) * 0.381) calc(50% + var(--s) * 0) var(--g),
+    calc(50% + var(--s) * 0.308) calc(50% + var(--s) * 0.224) var(--g),
+    calc(50% + var(--s) * 0.118) calc(50% + var(--s) * 0.363) var(--g),
+    calc(50% + var(--s) * -0.118) calc(50% + var(--s) * 0.363) var(--g),
+    calc(50% + var(--s) * -0.308) calc(50% + var(--s) * 0.224) var(--g),
+    calc(50% + var(--s) * -0.381) calc(50% + var(--s) * 0) var(--g),
+    calc(50% + var(--s) * -0.308) calc(50% + var(--s) * -0.224) var(--g),
+    calc(50% + var(--s) * -0.118) calc(50% + var(--s) * -0.363) var(--g),
+    calc(50% + var(--s) * 0.118) calc(50% + var(--s) * -0.363) var(--g),
+    calc(50% + var(--s) * 0.308) calc(50% + var(--s) * -0.224) var(--g),
+    radial-gradient(calc(var(--s) * 0.435), #000 99%, #0000 101%) subtract,
+    calc(50% + var(--s) * 0.475) calc(50% + var(--s) * 0.154) var(--g),
+    calc(50% + var(--s) * 0.294) calc(50% + var(--s) * 0.404) var(--g),
+    calc(50% + var(--s) * 0) calc(50% + var(--s) * 0.499) var(--g),
+    calc(50% + var(--s) * -0.294) calc(50% + var(--s) * 0.404) var(--g),
+    calc(50% + var(--s) * -0.475) calc(50% + var(--s) * 0.154) var(--g),
+    calc(50% + var(--s) * -0.475) calc(50% + var(--s) * -0.154) var(--g),
+    calc(50% + var(--s) * -0.294) calc(50% + var(--s) * -0.404) var(--g),
+    calc(50% + var(--s) * 0) calc(50% + var(--s) * -0.499) var(--g),
+    calc(50% + var(--s) * 0.294) calc(50% + var(--s) * -0.404) var(--g),
+    calc(50% + var(--s) * 0.475) calc(50% + var(--s) * -0.154) var(--g);
+}
+
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
