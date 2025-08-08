@@ -27,7 +27,7 @@ const Hero = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button className="group bg-[#FAF8F5] text-[#4A5A38] px-8 py-4 rounded-full hover:bg-[#4A5A38] hover:text-white transition duration-300 font-medium text-lg flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
-                <a href="#feature">Get Started</a>
+                <a href="#features">Get Started</a>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               {/* <button className="border-2 border-[#FAF8F5] text-[#FAF8F5] px-8 py-4 rounded-full hover:bg-white hover:text-[#4A5A38] transition duration-300 font-medium text-lg">
