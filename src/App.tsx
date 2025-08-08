@@ -1,22 +1,20 @@
-import About from "./components/About";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
-import Testimonials from "./components/Testimonials";
+import HomePage from "./HomePage";
+import ShoppingCartPage from "./components/ShoppingCart";
 
 function App() {
   return (
-    <>
+    <Router>
+      {/* Header appears on all pages */}
       <Header />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <About />
-      <Testimonials />
-      <Footer />
-    </>
+
+      {/* Page content */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<ShoppingCartPage />} />
+      </Routes>
+    </Router>
   );
 }
 

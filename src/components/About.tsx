@@ -64,7 +64,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 text-center">
+            {/* <div className="grid grid-cols-3 gap-6 text-center">
               <div>
                 <div
                   className="text-2xl font-bold mb-1"
@@ -98,7 +98,7 @@ const About = () => {
                   Plastic Bottles Saved
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Team Image */}
