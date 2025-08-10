@@ -32,7 +32,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="relative bg-[#f9fbe7] text-green-900 py-24 sm:py-32 overflow-hidden"
+      className="relative bg-[#FFFEE0] text-green-900 py-24 sm:py-32 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
@@ -48,7 +48,8 @@ const Features = () => {
             <span className="italic text-[#A25F4B]">Sustainable Living</span>
           </h2>
           <p className="mt-4 text-lg text-green-800 max-w-2xl mx-auto">
-            Every detail has a purpose. Our products are born from a deep respect for nature, function, and form.
+            Every detail has a purpose. Our products are born from a deep
+            respect for nature, function, and form.
           </p>
         </motion.div>
 
@@ -79,7 +80,9 @@ const Features = () => {
 
                 {/* Text */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-green-800 leading-relaxed text-base">
                     {feature.description}
                   </p>
@@ -99,15 +102,18 @@ const Features = () => {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto bg-green-100/50 border border-green-200 backdrop-blur-sm rounded-3xl px-10 py-16 text-center shadow-md"
         >
-          <h3 className="text-3xl sm:text-4xl font-serif font-light mb-4">
+          <h3 className="text-3xl sm:text-4xl font-serif font-light mb-6 text-[#2F3E34]">
             Why Choose Our Skincare?
           </h3>
-          <p className="text-lg text-green-800 mb-6 max-w-3xl mx-auto">
-            We blend tradition, sustainability, and modern skincare science to deliver conscious luxury. Our products honor your skin — and the Earth.
+
+          {/* Decorative divider */}
+          <div className="w-16 h-[2px] bg-[#A25F4B] mx-auto mb-6 rounded-full" />
+
+          <p className="text-lg text-green-900 leading-relaxed max-w-3xl mx-auto">
+            We blend tradition, sustainability, and modern skincare science to
+            deliver conscious luxury. Our products honor your skin — and the
+            Earth.
           </p>
-          <button className="mt-4 bg-[#A25F4B] text-white px-6 py-3 rounded-full text-sm uppercase tracking-wide shadow hover:bg-[#7c4136] transition">
-            Explore More
-          </button>
         </motion.div>
       </div>
 
