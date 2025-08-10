@@ -75,9 +75,6 @@ const Header = () => {
               className="relative text-[#4B5D44] hover:text-[#2F3E34] transition-colors"
             >
               <ShoppingCart className="w-6 h-6" />
-              <span className="absolute -top-2 -right-2 bg-[#6C8A57] text-white text-xs font-bold rounded-full px-1.5">
-                3
-              </span>
             </Link>
           </nav>
 
@@ -110,7 +107,7 @@ const Header = () => {
                 className="flex items-center gap-2 w-full bg-[#6C8A57] text-white px-6 py-2 rounded-full hover:bg-[#5A7D49] transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <ShoppingCart className="w-5 h-5" /> Cart (3)
+                <ShoppingCart className="w-5 h-5" /> Cart 
               </Link>
             </div>
           </div>
