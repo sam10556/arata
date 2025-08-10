@@ -47,10 +47,12 @@ const Header = () => {
               src="/logo.png"
               alt="Arata Logo"
               className="w-16 h-16 object-contain"
-            />
+              />
+            <Link to={'/'}>
             <span className="text-2xl font-serif garamond1 font-bold text-[#4B5D44]">
               ARATA
             </span>
+              </Link>
           </div>
 
           {/* Desktop Navigation */}
