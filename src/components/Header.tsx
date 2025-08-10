@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, ShoppingCart, ArrowLeft } from "lucide-react";
 
 const navLinks = [
   { label: "Home", section: "hero" },
@@ -12,16 +12,14 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation(); // Get current path
+  const location = useLocation();
 
-  // Detect scroll for background effect
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,8 +28,8 @@ const Header = () => {
     }
   };
 
-  // Determine cart icon link destination
-  const cartLink = location.pathname === "/cart" ? "/" : "/cart";
+  const isCartPage = location.pathname === "/cart";
+  const cartLink = isCartPage ? "/" : "/cart";
 
   return (
     <header
@@ -47,48 +45,61 @@ const Header = () => {
               src="/logo.png"
               alt="Arata Logo"
               className="w-16 h-16 object-contain"
-              />
-            <Link to={'/'}>
-            <span className="text-2xl font-serif garamond1 font-bold text-[#4B5D44]">
-              ARATA
-            </span>
-              </Link>
+            />
+            <Link to={"/"}>
+              <span className="text-2xl font-serif garamond1 font-bold text-[#4B5D44]">
+                ARATA
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
-            {navLinks.map(({ label, section }) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="text-xl font-medium text-[#4B5D44] hover:text-[#2F3E34] transition-colors duration-300 relative 
-                           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#6C8A57] 
-                           hover:after:w-full after:transition-all after:duration-300"
+          {!isCartPage ? (
+            <nav className="hidden md:flex items-center space-x-10">
+              {navLinks.map(({ label, section }) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="text-xl font-medium text-[#4B5D44] hover:text-[#2F3E34] transition-colors relative 
+                             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#6C8A57] 
+                             hover:after:w-full after:transition-all after:duration-300"
+                >
+                  {label}
+                </button>
+              ))}
+              <Link
+                to={cartLink}
+                className="relative text-[#4B5D44] hover:text-[#2F3E34] transition-colors"
               >
-                {label}
-              </button>
-            ))}
-
-            {/* Cart Icon */}
+                <ShoppingCart className="w-6 h-6" />
+              </Link>
+            </nav>
+          ) : (
             <Link
-              to={cartLink}
-              className="relative text-[#4B5D44] hover:text-[#2F3E34] transition-colors"
+              to="/"
+              className="hidden md:flex items-center gap-2 bg-[#6C8A57] text-white px-4 py-2 rounded-full hover:bg-[#5A7D49] transition"
             >
-              <ShoppingCart className="w-6 h-6" />
+              <ArrowLeft className="w-5 h-5" /> Back To Home
             </Link>
-          </nav>
+          )}
 
           {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-[#4B5D44]"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {!isCartPage && (
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-[#4B5D44]"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+        {!isCartPage && isMobileMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-[#D6E2D0] mt-2 rounded-md shadow-md">
             <div className="px-4 pt-4 pb-4 space-y-2">
               {navLinks.map(({ label, section }) => (
@@ -100,14 +111,12 @@ const Header = () => {
                   {label}
                 </button>
               ))}
-
-              {/* Cart Button */}
               <Link
                 to={cartLink}
                 className="flex items-center gap-2 w-full bg-[#6C8A57] text-white px-6 py-2 rounded-full hover:bg-[#5A7D49] transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <ShoppingCart className="w-5 h-5" /> Cart 
+                <ShoppingCart className="w-5 h-5" /> Cart
               </Link>
             </div>
           </div>
